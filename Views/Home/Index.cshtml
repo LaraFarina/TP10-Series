@@ -16,7 +16,7 @@
    <img src='@S.ImagenSerie' class="card-img-top" alt="Img"> 
   <div class="card-body">
     <h5 class="card-title">@S.Nombre (@S.AñoInicio)</h5> 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalTemporadas" onclick="()">Temporadas</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalTemporadas" onclick="MostrarTemporadas(@S.IdSerie)">Temporadas</button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalActores" onclick="()">Actores</button>
    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalMasInfo" onclick="()">Mas info</button> 
   </div>
@@ -32,7 +32,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div id="NumeroTemporada" id="TituloTemporada"></div>
+        <div id="TituloTemporada"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Cerrar</button>
