@@ -18,7 +18,9 @@ return BD.ObtenerTemporadasPorSerie(IdSerie);
         public List<Actores> VerActores(int IdSerie){
 return BD.ObtenerActoresPorSerie(IdSerie);
     }
- 
+ public string Verinfo(int IdSerie){
+    return BD.ObtenerSinopsisPorSerie(IdSerie);
+ }
 
 }
 // Crear en el controller la acción Index para que cargue las Series de la base de datos en un ViewBag.

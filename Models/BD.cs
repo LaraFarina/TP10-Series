@@ -41,6 +41,16 @@ namespace TP10Series.Models;
             }
             return temporadas;
         }
+public static string ObtenerSinopsisPorSerie(int serieId)
+{
+    string info;
+    using (SqlConnection db = new SqlConnection(_connectionString))
+    {
+        string sql = "SELECT Sinopsis FROM Series WHERE IdSerie = @SerieId";
+        info = db.QueryFirstOrDefault<string>(sql, new { SerieId = serieId });
+    }
+    return info;
+}
 
     }
-    
+  
