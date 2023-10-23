@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "TP10-Series": {
+    "TP10Series": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

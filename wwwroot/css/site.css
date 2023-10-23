@@ -19,3 +19,14 @@ footer {
   bottom: 0; 
   margin: 10px 0px 20px 0px;
 }
+
+.card{
+  width: 400px;
+  height: auto;
+  float: left;
+  margin: 30px
+}
+
+.titulo{
+  text-align: center;
+}

@@ -1,4 +1,5 @@
-    public class Actor
+    namespace TP10Series.Models;
+    public class Actores
     {
         public int IdActor { get; set; }
         public int IdSerie { get; set; }

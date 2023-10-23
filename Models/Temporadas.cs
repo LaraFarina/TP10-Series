@@ -1,4 +1,5 @@
-    public class Temporada
+    namespace TP10Series.Models;
+    public class Temporadas
     {
         public int IdTemporada { get; set; }
         public int IdSerie { get; set; }

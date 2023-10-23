@@ -1,4 +1,5 @@
- public class Serie
+namespace TP10Series.Models;
+ public class Series
     {
         public int IdSerie { get; set; }
         public string Nombre { get; set; }
