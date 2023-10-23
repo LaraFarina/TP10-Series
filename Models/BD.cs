@@ -52,5 +52,4 @@ public static string ObtenerSinopsisPorSerie(int serieId)
     return info;
 }
 
-    }
-  
+    }  
