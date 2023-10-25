@@ -12,14 +12,14 @@ public class HomeController : Controller
         return View();
     }
 
-    public List<Temporadas> VerTemporadas(int IdSerie){
-return BD.ObtenerTemporadasPorSerie(IdSerie);
+    public List<Temporadas> VerTemporadas(int idS){
+return BD.ObtenerTemporadasPorSerie(idS);
     }
-        public List<Actores> VerActores(int IdSerie){
-return BD.ObtenerActoresPorSerie(IdSerie);
+        public List<Actores> VerActores(int idS){
+return BD.ObtenerActoresPorSerie(idS);
     }
- public string Verinfo(int IdSerie){
-    return BD.ObtenerSinopsisPorSerie(IdSerie);
+ public string Verinfo(int idS){
+    return BD.ObtenerSinopsisPorSerie(idS);
  }
 
 }

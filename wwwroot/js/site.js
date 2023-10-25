@@ -1,50 +1,48 @@
 ﻿// Utilizar el archivo site.js para definir las funciones de Javascript que van a cargar la información mediante Ajax.  
-function MostarTemporadas(IdS){
-    $.ajax(
-        {
-            type: 'POST',
-            datatype: 'JSON',
-            url: '/Home/VerTemporadas',
-            data: {IdSerie : IdS},
-            success: 
-            function (response){   
-                $("#TituloTemporada").html(response.List)
-            }
-        }
-
-    )
-        
-    }
-
-    function MostarActores(IdA){
-        $.ajax(
-            {
-                type: 'POST',
-                datatype: 'JSON',
-                url: '/Home/VerActores',
-                data: {IdSerie : IdS},
-                success: 
-                function (response){
-                    $("#TituloTemporada").html(response.List)
+function MostrarActores(IdSerie, nombre) {
+    $.ajax({
+        type: 'GET',
+        datatype: 'JSON',
+        url: '/Home/VerActores',
+        data: { idS: IdSerie },
+        success:
+            function (response) {
+                let actores = "";
+                $("#Titulo").html("Cantidad de Actores " + nombre + ": " + response.length);
+                for (const actor of response) {
+                    actores = actores + actor.nombre + "<br>"
                 }
+                $("#Cuerpo").html(actores);
             }
-    
-        )
-            
-        }
-        function MostarTemporadas(IdS){
-            $.ajax(
-                {
-                    type: 'POST',
-                    datatype: 'JSON',
-                    url: '/Home/VerTemporadas',
-                    data: {IdSerie : IdS},
-                    success: 
-                    function (response){
-                        $("#TituloTemporada").html(response.List)
-                    }
+    });
+}
+function MostrarTemporadas(IdSerie, nombre) {
+    $.ajax({
+        type: 'GET',
+        datatype: 'JSON',
+        url: '/Home/VerTemporadas',
+        data: { idS: IdSerie },
+        success:
+            function (response) {
+                let temporadas = "";
+                $("#Titulo").html("Cantidad de Temporadas " + nombre + ": " + response.length);
+                for (const temporada of response) {
+                    temporadas = temporadas + temporada.numeroTemporada + ": " + temporada.tituloTemporada + "<br>"
                 }
-        
-            )
-                
+                $("#Cuerpo").html(temporadas)
             }
+    });
+}
+function MostrarInfo(IdSerie, nombre) {
+    $.ajax({
+        type: 'GET',
+        datatype: 'JSON',
+        url: '/Home/Verinfo',
+        data: { idS: IdSerie },
+        success:
+            function (response) {
+                $("#Titulo").html("Serie: " + nombre);
+                $("#Cuerpo").html(response)
+            }
+    });
+}
